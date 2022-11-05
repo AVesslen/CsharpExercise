@@ -1,9 +1,0 @@
-1. ta emot och lagra anställda med namn och lön via inmatning i konsolen. 
-   Förnamn, efternamn, lön, 
-  
-
-2. skriv ut registret i en konsol
-
-Uppg. 1  klasser: List
-
-uppg. 2 : Metoder: Console.writeLine, ReadLine, personmethod, displaymethod
