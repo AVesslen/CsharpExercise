@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
+
 
 namespace Ovn2
 {
@@ -18,15 +23,16 @@ namespace Ovn2
             {
                 Console.Write($"{i}.{inputText}, ");
             }
+            Console.WriteLine();
         }
 
-        public static void ThirdWord()
-        {
-            Console.WriteLine("Write a sentence with at least 3 words: ");
-            string inputSentence = Console.ReadLine();
+        public static void PrintThirdWord()
+        {            
+
+            string inputSentence= RequestData.AskForSentence("Write a sentence with at least 3 words: ");
             var sentenceSplit = inputSentence.Split(' ');
             Console.WriteLine($"The third word is: {sentenceSplit[2]}");
-        }
+        }   
 
     }
 }

@@ -31,11 +31,10 @@
                         break;
 
                     case "4":
-                        PlayWithStrings.ThirdWord();
+                        PlayWithStrings.PrintThirdWord();
                         break;
 
-                    case "Q":
-                        Environment.Exit(0);
+                    case "Q":                      
                         isRunning = false;
                         break;
 
@@ -52,7 +51,7 @@
             Console.WriteLine("1. Youth or pensionair price");
             Console.WriteLine("2. Price for whole party ");
             Console.WriteLine("3. Repeat ten times ");
-            Console.WriteLine("4. The third word");
+            Console.WriteLine("4. Print the third word");
         }
     }
 }
