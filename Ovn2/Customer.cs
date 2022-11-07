@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,12 +19,17 @@ namespace Ovn2
         public static string GetPersonType(int age)
         {
             string personType;
+            if (age < 5)
+                personType = "Child";
 
-            if (age < 20)
+            else if (age >= 5 && age < 20)
                 personType = "Youth";
 
-            else if (age > 64)
+            else if (age > 64 && age <= 100)
                 personType = "Pensionair";
+
+            else if (age > 100)
+                personType = "100+";
 
             else
                 personType = "Standard";

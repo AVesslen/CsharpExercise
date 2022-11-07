@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Ovn2
 {
-    public class PlayWithStrings
+    public class PlayWithStrings //String manipulations
     {
         public static void RepeteText()
         {
@@ -28,8 +28,9 @@ namespace Ovn2
 
         public static void PrintThirdWord()
         {            
-
             string inputSentence= RequestData.AskForSentence("Write a sentence with at least 3 words: ");
+            //Checks that the sentence contains at least three words
+
             var sentenceSplit = inputSentence.Split(' ');
             Console.WriteLine($"The third word is: {sentenceSplit[2]}");
         }   

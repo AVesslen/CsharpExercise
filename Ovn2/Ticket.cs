@@ -23,11 +23,17 @@ namespace Ovn2
         {
             int price;
 
-            if (age < 20)
+            if (age < 5)
+                price = 0;
+
+            else if (age >= 5 && age < 20)
                 price = 80;
 
-            else if (age > 64)
+            else if (age > 64 && age <= 100)
                 price = 90;
+
+            else if (age > 100)
+                price = 0;
 
             else
                 price = 120;
