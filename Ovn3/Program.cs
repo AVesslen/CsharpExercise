@@ -4,40 +4,39 @@
     {
         static void Main(string[] args)
         {
-            Person person = new Person();
-            try
-            {
-                person.Age = -2;               
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            Person person=PersonHandler.CreatePerson(20,"Anna","Vesslen",160,65);
+           
+            //try
+            //{
+            //    //person.Age = -2;
+            //    PersonHandler.SetAge(person, 10);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
 
-            try
-            {
-            person.FName = "A";
+            //try
+            //{
+            //person.FName = "A";
                 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
 
-            try
-            {
-            person.LName = "Vessssssssleeeeeeeeeen";
+            //try
+            //{
+            //person.LName = "Vessssssssleeeeeeeeeen";
                 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
 
-
-
-
-            Console.WriteLine($"{person.FName}{person.LName}{person.Age}");
+            //Console.WriteLine($"{person.FName}{person.LName}{person.Age}");
         }
     }
 }
