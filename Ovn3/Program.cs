@@ -10,7 +10,8 @@ namespace Ovn3
             
             
             
-            
+            Horse horse = new Horse();
+            horse.DoSound();
             
             
             
