@@ -16,8 +16,33 @@ namespace Ovn3
 
         public int Height { get; set; }
         public int Weight { get; set; }
-                       
 
+
+
+
+        public Person()
+        {
+            
+        }
+
+
+
+
+
+        public int Age
+        {
+            get 
+            { 
+                return age; 
+            }
+            set 
+            {
+                if (value > 0)
+                    age = value;
+                else
+                    throw new ArgumentException ("Age needs to be >0");                
+            }
+        }
         public string FName
         {
             get 
@@ -41,27 +66,13 @@ namespace Ovn3
             }
             set
             {
-                if (value.Length <= 3 && value.Length <= 15)
+                if (value.Length >= 3 && value.Length <= 15)
                     lName = value;
                 else
                     throw new ArgumentException("Length of last name needs to be in a valid range");
             }
         }
 
-        public int Age
-        {
-            get 
-            { 
-                return age; 
-            }
-            set 
-            {
-                if (value > 0)
-                    age = value;
-                else
-                    throw new ArgumentException ("Age needs to be >0");                
-            }
-        }
 
        
 
