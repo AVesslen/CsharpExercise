@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ovn3
 {
-    internal class PersonHandler:Person
+    internal class PersonHandler
     {
         //public void SetAge(Person pers, int newage)
         //{

@@ -4,7 +4,58 @@
     {
         static void Main(string[] args)
         {
-            Person person=PersonHandler.CreatePerson(20,"Anna","Vesslen",160,65);
+
+
+            NumericInputError numericInputError = new NumericInputError();
+            NumericInputError numericInputError2 = new NumericInputError();
+            TextInputError textInputError = new TextInputError();   
+            NegativeNumberInputError negativeNumberInputError = new NegativeNumberInputError();
+            DoubleInputError doubleInputError = new DoubleInputError(); 
+            OutOfRangeInputError outOfRangeInputError = new OutOfRangeInputError();
+            
+
+
+            var list=new List<UserError>();
+            list.Add(numericInputError);
+            list.Add(numericInputError2);
+            list.Add(textInputError);
+            list.Add(negativeNumberInputError);
+            list.Add(doubleInputError);
+            list.Add(outOfRangeInputError);
+
+
+
+            foreach(UserError error in list)
+            {
+                Console.WriteLine(error.UEMessage());
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //PersonHandler person1=PersonHandler.CreatePerson(20,"Anna","Vesslen",160,65);
            
             //try
             //{
