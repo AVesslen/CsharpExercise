@@ -24,17 +24,57 @@ namespace Ovn3
             pelican.Weight = 15;
             pelican.NumberOfFeathers = 300;
             pelican.WingSpan = 250;
+            pelican.BeakSize = 25;
+            
+            Wolfman wolfman = new Wolfman();
+            wolfman.Name = "Kalle";
 
+            Dog dog=new Dog();
+            dog.Name = "Fido";
+            dog.Age = 5;
+            dog.FurColor = "White";
+
+            //Animal dog = new Dog();
+            //Dog castedDog = (Dog)dog;
+            //castedDog.FurColor = "black";
+
+          
             List<Animal> Animals = new List<Animal>
             {
-                horse, hedgehog,pelican 
+                horse, hedgehog,pelican, wolfman, dog
             };         
+
+            //foreach (Animal animal in Animals)
+            //{
+            //    Console.WriteLine(animal);
+            //    Console.WriteLine(animal.Stats());
+            //    if (animal is IPerson)
+            //    {
+            //        IPerson castedWolfman = (IPerson)animal;     //Type casting
+            //        Console.WriteLine(castedWolfman.Talk());
+            //    }
+            //    else
+            //        Console.WriteLine(animal.DoSound());
+
+            //    Console.WriteLine();
+            //}
+
+            //List<Dog> Dogs = new List<Dog>();
+            ////Dogs.Add(horse);
+
+            //foreach (Animal animal in Animals)
+            //{
+            //    Console.WriteLine(animal);
+            //    Console.WriteLine(animal.Stats());
+            //    Console.WriteLine();
+            //}
 
             foreach (Animal animal in Animals)
             {
-                Console.WriteLine(animal);
+                if (animal is Dog)                               
+                Console.WriteLine(animal.Stats());
+               
                 Console.WriteLine();
-                //animal.Sound();
             }
 
 

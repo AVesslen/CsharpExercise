@@ -10,6 +10,7 @@ namespace Ovn3
     internal interface IPerson
     {
         string Talk();
+         
     }
 
     abstract class Animal
@@ -61,7 +62,10 @@ namespace Ovn3
             return $"{baseProperties} Fur color: {FurColor}";
         }
 
-    }
+        public string Eat()
+        { return "Dog eats: meat"; }  // Fråga 3.4.16: Jag kommer inte åt den här metoden från Animals-listan                                           
+    }                                 // eftersom metoden inte finns i Animals-klassen. Dog ärver Animals, 
+                                      // men Animals har ingen koll på vad som sker i Dog. 
 
     class Hedgehog : Animal
     {
@@ -126,11 +130,11 @@ namespace Ovn3
 
     class Wolfman : Wolf, IPerson
         {
-       public string Talk()
+        public string Talk()
         {
             return "Wolfman talk: Hey howl";
         }
-         }
+    }
 
     class Pelican : Bird
     {
@@ -153,8 +157,12 @@ namespace Ovn3
         public bool EatsFish { get; set; }
     }
 
-    // Fråga 13: Om samtliga fåglar behöver ett nytt attribut lägger vi det i klassen Bird
-    // Fråga 14: Om alla djur behöver det nya attributet lägger vi det i klassen Animal
+    // Fråga 3.3.13: Om samtliga fåglar behöver ett nytt attribut lägger vi det i klassen Bird
+    // Fråga 3.3.14: Om alla djur behöver det nya attributet lägger vi det i klassen Animal
+
+    // Fråga 3.4.9: De ärver inte av varandra
+    // Fråga 3.4.10: För att alla klasser ska kunna lagras tillsammans måste listan vara av typ Animal
+    // 
 
     
 }
