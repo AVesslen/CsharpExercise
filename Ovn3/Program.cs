@@ -12,6 +12,12 @@ namespace Ovn3
             
             Horse horse = new Horse();
             horse.DoSound();
+            Pelican pelican = new Pelican();
+            pelican.NumberOfFeathers = 100;
+            Bird bird = new Bird();
+            bird.NumberOfFeathers = 200;
+            
+            Console.WriteLine(pelican.NumberOfFeathers);
             
             
             

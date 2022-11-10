@@ -1,31 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Ovn3
 {
+    internal interface IPerson
+    {
+        string Talk();
+    }
+    
     abstract class Animal
     {
         public string Name { get; set; }
         public int Age { get; set; }
         public double Weight { get; set; }
 
-
-        public abstract void DoSound();
         public Animal()
         {
 
         }
+
+        public abstract string DoSound();
+
+        public string Stats()
+        {
+            return "";
+        }
     }
 
-    class Horse:Animal
+    class Horse : Animal
     {
         public int HoofSize { get; set; }
-        public override void DoSound()
+        public override string DoSound()
         {
-            Console.WriteLine("Horse sound: Neigh");
+            return "Horse sound: Neigh";
         }
     }
 
@@ -33,64 +44,75 @@ namespace Ovn3
     {
         public string FurColor { get; set; }
 
-        public override void DoSound()
+        public override string DoSound()
         {
-            Console.WriteLine("Dog sound: Wof");
+            return "Dog sound: Wof";
         }
 
-}
+    }
 
     class Hedgehog : Animal
     {
         public int NumberOfSpikes { get; set; }
 
-        public override void DoSound()
+        public override string DoSound()
         {
-            Console.WriteLine("Hedgehog sound: Peep");
+            return "Hedgehog sound: Peep";
         }
 
     }
     class Worm : Animal
     {
         public bool IsPoisonous { get; set; }
-        public override void DoSound()
+        public override string DoSound()
         {
-            Console.WriteLine("Worm sound: Wriggling");
+            return "Worm sound: Wriggling";
         }
 
     }
     class Bird : Animal
     {
         public int WingSpan { get; set; }
-        public override void DoSound()
+        public int NumberOfFeathers { get; set; } //New attribute
+        public override string DoSound()
         {
-            Console.WriteLine("Bird sound: Singing");
+            return "Bird sound: Singing";
         }
     }
     class Wolf : Animal
     {
         public double PawSize { get; set; }
-        public override void DoSound()
+        public override string DoSound()
         {
-            Console.WriteLine("Wolf sound: Howl");
+            return "Wolf sound: Howl";
         }
     }
 
+    class Wolfman : Wolf, IPerson
+        {
+       public string Talk()
+        {
+            return "Wolfman talk: Hey howl";
+        }
+         }
+
     class Pelican : Bird
     {
-        public int MyProperty { get; set; }
+        public int BeakSize { get; set; }
     }
 
     class Flamingo : Bird
     {
-        public bool HasPinkLegs { get; set; }
+        public bool HasPinkLegs { get; set; } = true;
     }
 
     class Swan : Bird
     {
-        public int MyProperty { get; set; }
+        public bool EatsFish { get; set; }
     }
 
+    // Fråga 13: Om samtliga fåglar behöver ett nytt attribut lägger vi det i klassen Bird
+    // Fråga 14: Om alla djur behöver det nya attributet lägger vi det i klassen Animal
 
-
+    
 }

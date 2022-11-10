@@ -11,23 +11,15 @@ namespace Ovn3
         private int age;
         private string fName;
         private string lName;
-        //private int height;
-        //private int weight;
-
+        
         public int Height { get; set; }
         public int Weight { get; set; }
-
-
 
 
         public Person()
         {
             
         }
-
-
-
-
 
         public int Age
         {
