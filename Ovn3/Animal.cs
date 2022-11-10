@@ -11,7 +11,7 @@ namespace Ovn3
     {
         string Talk();
     }
-    
+
     abstract class Animal
     {
         public string Name { get; set; }
@@ -25,9 +25,9 @@ namespace Ovn3
 
         public abstract string DoSound();
 
-        public string Stats()
+        public virtual string Stats()
         {
-            return "";
+            return $"Name: {Name} Age: {Age} Weight: {Weight}";
         }
     }
 
@@ -38,6 +38,12 @@ namespace Ovn3
         {
             return "Horse sound: Neigh";
         }
+
+        public override string Stats()
+        {
+            string baseProperties=base.Stats();
+            return $"{baseProperties} Hoof size: {HoofSize}";
+        }
     }
 
     class Dog : Animal
@@ -47,6 +53,12 @@ namespace Ovn3
         public override string DoSound()
         {
             return "Dog sound: Wof";
+        }
+
+        public override string Stats()
+        {
+            string baseProperties = base.Stats();
+            return $"{baseProperties} Fur color: {FurColor}";
         }
 
     }
@@ -60,6 +72,12 @@ namespace Ovn3
             return "Hedgehog sound: Peep";
         }
 
+        public override string Stats()
+        {
+            string baseProperties = base.Stats();
+            return $"{baseProperties} Number of spikes: {NumberOfSpikes}";
+        }
+
     }
     class Worm : Animal
     {
@@ -67,6 +85,12 @@ namespace Ovn3
         public override string DoSound()
         {
             return "Worm sound: Wriggling";
+        }
+
+        public override string Stats()
+        {
+            string baseProperties = base.Stats();
+            return $"{baseProperties} Poisonous: {IsPoisonous}";
         }
 
     }
@@ -78,6 +102,13 @@ namespace Ovn3
         {
             return "Bird sound: Singing";
         }
+
+        public override string Stats()
+        {
+            string baseProperties = base.Stats();
+            return $"{baseProperties} Wing span: {WingSpan} NumberOfFeathers: {NumberOfFeathers}";
+        }
+
     }
     class Wolf : Animal
     {
@@ -85,6 +116,11 @@ namespace Ovn3
         public override string DoSound()
         {
             return "Wolf sound: Howl";
+        }
+        public override string Stats()
+        {
+            string baseProperties = base.Stats();
+            return $"{baseProperties} Paw size: {PawSize}";
         }
     }
 
@@ -99,6 +135,12 @@ namespace Ovn3
     class Pelican : Bird
     {
         public int BeakSize { get; set; }
+
+        public override string Stats()
+        {
+            string baseProperties = base.Stats();
+            return $"{baseProperties} Beak Size: {BeakSize}";
+        }
     }
 
     class Flamingo : Bird

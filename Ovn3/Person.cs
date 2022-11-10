@@ -11,37 +11,37 @@ namespace Ovn3
         private int age;
         private string fName;
         private string lName;
-        
+
         public int Height { get; set; }
         public int Weight { get; set; }
 
 
         public Person()
         {
-            
+
         }
 
         public int Age
         {
-            get 
-            { 
-                return age; 
+            get
+            {
+                return age;
             }
-            set 
+            set
             {
                 if (value > 0)
                     age = value;
                 else
-                    throw new ArgumentException ("Age needs to be >0");                
+                    throw new ArgumentException("Age needs to be >0");
             }
         }
         public string FName
         {
-            get 
-            { 
-                return fName; 
+            get
+            {
+                return fName;
             }
-            set 
+            set
             {
                 if (value.Length >= 2 && value.Length <= 10)
                     fName = value;
@@ -66,7 +66,7 @@ namespace Ovn3
         }
 
 
-       
+
 
 
 

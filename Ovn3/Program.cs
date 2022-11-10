@@ -6,22 +6,61 @@ namespace Ovn3
     {
         static void Main(string[] args)
         {
-            
-            
-            
-            
             Horse horse = new Horse();
-            horse.DoSound();
+            horse.Name = "Ronja";
+            horse.Age = 12;
+            horse.Weight = 500;
+            horse.HoofSize = 6;
+
+            Hedgehog hedgehog=new Hedgehog();
+            hedgehog.Name = "Igge";
+            hedgehog.Age = 2;
+            hedgehog.Weight = 1.5;
+            hedgehog.NumberOfSpikes = 200;
+
             Pelican pelican = new Pelican();
-            pelican.NumberOfFeathers = 100;
-            Bird bird = new Bird();
-            bird.NumberOfFeathers = 200;
-            
-            Console.WriteLine(pelican.NumberOfFeathers);
-            
-            
-            
-            
+            pelican.Name = "Pippi";
+            pelican.Age = 4;
+            pelican.Weight = 15;
+            pelican.NumberOfFeathers = 300;
+            pelican.WingSpan = 250;
+
+            List<Animal> Animals = new List<Animal>
+            {
+                horse, hedgehog,pelican 
+            };         
+
+            foreach (Animal animal in Animals)
+            {
+                Console.WriteLine(animal);
+                Console.WriteLine();
+                //animal.Sound();
+            }
+
+
+
+            //Pelican pelican = new Pelican();
+            //pelican.Age = 2;
+            //pelican.Name = "Pippi";
+            //pelican.WingSpan = 3;
+            //pelican.BeakSize = 10;
+            //Horse horse = new Horse();
+            //string egenskaper=pelican.Stats();
+
+            //Console.WriteLine(egenskaper);
+
+            //Horse horse = new Horse();
+            //horse.DoSound();
+            //Pelican pelican = new Pelican();
+            //pelican.NumberOfFeathers = 100;
+            //Bird bird = new Bird();
+            //bird.NumberOfFeathers = 200;
+
+            //Console.WriteLine(pelican.NumberOfFeathers);
+
+
+
+
             // **** Uppgift 3.2 Polymorfism ****
             //
             //NumericInputError numericInputError = new NumericInputError();
@@ -48,13 +87,13 @@ namespace Ovn3
 
 
 
-          
+
             // **** Uppgift 3.1.5. **** Inkapsling PersonHandler
             //
             //PersonHandler personHandler = new PersonHandler();
             //Person person= personHandler.CreatePerson(age:35, fname:"Maria", lname:"Karlsson", 170.3, 65);
             //Console.WriteLine($"Before changing: {person.FName} {person.LName} {person.Age} years {person.Height} cm {person.Weight} kg");
-                        
+
             //personHandler.SetAge(person, 55);
             //personHandler.SetHeight(person,155);
             //personHandler.SetLName(person, "Smith");
@@ -64,13 +103,13 @@ namespace Ovn3
             //PersonHandler personHandler2 = new PersonHandler();
             //Person person2 = personHandler2.CreatePerson(age: 5, fname: "Kalle", lname: "Svensson", 180, 91.6);
             //Console.WriteLine($"Before changing: {person2.FName} {person2.LName} {person2.Age} years {person2.Height} cm {person2.Weight} kg");
-           
+
             //personHandler.SetAge(person2, 70);
             //personHandler.SetFName(person2, "Erik");
             //personHandler.SetWeight(person2, 75);      
             //Console.WriteLine($"After changing: {person2.FName} {person2.LName} {person2.Age} years {person2.Height} cm {person2.Weight} kg");
 
-                                 
+
 
 
 
