@@ -19,9 +19,11 @@ namespace Ovn3
         public int Age { get; set; }
         public double Weight { get; set; }
 
-        public Animal()
+        public Animal(string name, int age, int weight)
         {
-
+            Name=name;
+            Age=age;
+            Weight=weight;
         }
 
         public abstract string DoSound();
@@ -36,6 +38,11 @@ namespace Ovn3
     class Horse : Animal
     {
         public int HoofSize { get; set; }
+
+        public Horse(string name, int age, int weight, int hoofSize) :  base(name, age, weight) 
+        {
+            HoofSize = hoofSize;
+        }
         public override string DoSound()
         {
             return "Horse sound: Neigh";
@@ -51,6 +58,11 @@ namespace Ovn3
     {
         public string FurColor { get; set; }
 
+        public Dog(string name, int age, int weight, string furColor) : base(name, age, weight)
+        {
+                FurColor = furColor;
+        }
+       
         public override string DoSound()
         {
             return "Dog sound: Wof";
@@ -73,6 +85,11 @@ namespace Ovn3
     {
         public int NumberOfSpikes { get; set; }
 
+        public Hedgehog(string name, int age, int weight, int numberOfSpikes) : base(name, age, weight)
+        {
+            NumberOfSpikes = numberOfSpikes;
+        }
+
         public override string DoSound()
         {
             return "Hedgehog sound: Peep";
@@ -88,6 +105,12 @@ namespace Ovn3
     class Worm : Animal
     {
         public bool IsPoisonous { get; set; }
+
+        public Worm(string name, int age, int weight, bool isPoisonous) : base(name, age, weight)   
+        {
+            IsPoisonous = isPoisonous;
+        }
+
         public override string DoSound()
         {
             return "Worm sound: Wriggling";
@@ -104,6 +127,12 @@ namespace Ovn3
     {
         public int WingSpan { get; set; }
         public int NumberOfFeathers { get; set; } //New attribute
+
+        public Bird(string name, int age, int weight, int wingSpan, int numberOfFeathers) : base(name, age, weight) 
+        {
+            WingSpan = wingSpan;
+            NumberOfFeathers = numberOfFeathers;
+        }
         public override string DoSound()
         {
             return "Bird sound: Singing";
@@ -119,6 +148,12 @@ namespace Ovn3
     class Wolf : Animal
     {
         public double PawSize { get; set; }
+
+        public Wolf(string name, int age, int weight, double pawSize) : base(name, age, weight)
+        {
+            PawSize = pawSize;
+        }
+
         public override string DoSound()
         {
             return "Wolf sound: Howl";
@@ -132,6 +167,11 @@ namespace Ovn3
 
     class Wolfman : Wolf, IPerson
         {
+
+        public Wolfman(string name, int age, int weight, double pawSize) :base(name,age,weight, pawSize)
+        {
+
+        }
         public string Talk()
         {
             return "Wolfman talk: Hey howl";
@@ -141,6 +181,11 @@ namespace Ovn3
     class Pelican : Bird
     {
         public int BeakSize { get; set; }
+
+        public Pelican(string name, int age, int weight, int wingSpan, int numberOfFeathers, int beakSize) :base(name, age, weight, wingSpan, numberOfFeathers)
+        {
+            BeakSize = beakSize;
+        }
 
         public override string Stats()
         {
@@ -152,11 +197,33 @@ namespace Ovn3
     class Flamingo : Bird
     {
         public bool HasPinkLegs { get; set; } = true;
+
+        public Flamingo(string name, int age, int weight, int wingSpan, int numberOfFeathers, bool hasPinkLegs) : base(name, age, weight, wingSpan, numberOfFeathers)
+        {
+            HasPinkLegs = hasPinkLegs;
+        }
+
+        public override string Stats()
+        {
+            string baseProperties = base.Stats();
+            return $"{baseProperties} Has pink legs: {HasPinkLegs}";
+        }
     }
 
     class Swan : Bird
     {
+        public Swan(string name, int age, int weight, int wingSpan, int numberOfFeathers, bool eatsFish) : base(name, age, weight, wingSpan, numberOfFeathers)
+        {
+            EatsFish = eatsFish;
+        }
+
         public bool EatsFish { get; set; }
+
+        public override string Stats()
+        {
+            string baseProperties = base.Stats();
+            return $"{baseProperties} Eats fish: {EatsFish}";
+        }
     }
 
     // Fråga 3.3.13: Om samtliga fåglar behöver ett nytt attribut lägger vi det i klassen Bird
