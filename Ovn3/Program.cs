@@ -6,43 +6,43 @@ namespace Ovn3
     {
         static void Main(string[] args)
         {
-            Horse horse = new Horse();
-            horse.Name = "Ronja";
-            horse.Age = 12;
-            horse.Weight = 500;
-            horse.HoofSize = 6;
+            //Horse horse = new Horse();
+            //horse.Name = "Ronja";
+            //horse.Age = 12;
+            //horse.Weight = 500;
+            //horse.HoofSize = 6;
 
-            Hedgehog hedgehog=new Hedgehog();
-            hedgehog.Name = "Igge";
-            hedgehog.Age = 2;
-            hedgehog.Weight = 1.5;
-            hedgehog.NumberOfSpikes = 200;
+            //Hedgehog hedgehog = new Hedgehog();
+            //hedgehog.Name = "Igge";
+            //hedgehog.Age = 2;
+            //hedgehog.Weight = 1.5;
+            //hedgehog.NumberOfSpikes = 200;
 
-            Pelican pelican = new Pelican();
-            pelican.Name = "Pippi";
-            pelican.Age = 4;
-            pelican.Weight = 15;
-            pelican.NumberOfFeathers = 300;
-            pelican.WingSpan = 250;
-            pelican.BeakSize = 25;
-            
-            Wolfman wolfman = new Wolfman();
-            wolfman.Name = "Kalle";
+            //Pelican pelican = new Pelican();
+            //pelican.Name = "Pippi";
+            //pelican.Age = 4;
+            //pelican.Weight = 15;
+            //pelican.NumberOfFeathers = 300;
+            //pelican.WingSpan = 250;
+            //pelican.BeakSize = 25;
 
-            Dog dog=new Dog();
-            dog.Name = "Fido";
-            dog.Age = 5;
-            dog.FurColor = "White";
+            //Wolfman wolfman = new Wolfman();
+            //wolfman.Name = "Kalle";
 
-            //Animal dog = new Dog();
-            //Dog castedDog = (Dog)dog;
-            //castedDog.FurColor = "black";
+            //Dog dog = new Dog();
+            //dog.Name = "Fido";
+            //dog.Age = 5;
+            //dog.FurColor = "White";
 
-          
-            List<Animal> Animals = new List<Animal>
-            {
-                horse, hedgehog,pelican, wolfman, dog
-            };         
+            //Dog dog2 = new Dog();
+            //dog2.Name = "Laban";
+            //dog2.Age = 10;
+            //dog2.FurColor = "Brown";          
+
+            //List<Animal> Animals = new List<Animal>
+            //{
+            //    horse, hedgehog,pelican, wolfman, dog, dog2
+            //};
 
             //foreach (Animal animal in Animals)
             //{
@@ -60,22 +60,28 @@ namespace Ovn3
             //}
 
             //List<Dog> Dogs = new List<Dog>();
-            ////Dogs.Add(horse);
+            //Dogs.Add(horse);               //// Fråga 3.4.9: Kan ej lägga till horse. Listan kan bara innehålla instanser av typ Dog. Horse är ingen subklass till Dog.
+            //// Fråga 3.4.10: För att alla klasser ska kunna lagras tillsammans måste listan vara av typ Animal
+
 
             //foreach (Animal animal in Animals)
             //{
-            //    Console.WriteLine(animal);
-            //    Console.WriteLine(animal.Stats());
-            //    Console.WriteLine();
+            //    Console.WriteLine(animal);                 ////Fråga 3.4.13. Den virtuella metoden Stats() tillåter att subklasserna ersätter den med en egen, override.
+            //    Console.WriteLine(animal.Stats());         ////   Vid anrop av animal.Stats() hanteras subklasserna som instanser av deras basklasser. 
+            //    Console.WriteLine();                       ////   Den mest specialiserade metoden kommer då användas. (enl. Polymorfismens regel 1+2). 
             //}
 
-            foreach (Animal animal in Animals)
-            {
-                if (animal is Dog)                               
-                Console.WriteLine(animal.Stats());
-               
-                Console.WriteLine();
-            }
+            //foreach (Animal animal in Animals)
+            //{
+            //    if (animal is Dog dogs)  // castar direkt
+            //    {
+            //        Console.WriteLine(animal.Stats());
+            //        Console.WriteLine(dogs.Eat());              //// Fråga 3.4.17. Jag kommer inte åt Eat()-metoden från Animals-listan                                           
+            //    }                                               //// eftersom metoden inte finns i Animal-klassen. Dog ärver klassen Animal, 
+            //}                                                   //// men Animal har ingen koll på vad som sker i Dog.
+                
+                
+            
 
 
 
@@ -110,7 +116,6 @@ namespace Ovn3
             //DoubleInputError doubleInputError = new DoubleInputError(); 
             //OutOfRangeInputError outOfRangeInputError = new OutOfRangeInputError();
 
-
             //var list=new List<UserError>();
             //list.Add(numericInputError);
             //list.Add(numericInputError2);
@@ -126,18 +131,16 @@ namespace Ovn3
 
 
 
-
-
             // **** Uppgift 3.1.5. **** Inkapsling PersonHandler
             //
             //PersonHandler personHandler = new PersonHandler();
-            //Person person= personHandler.CreatePerson(age:35, fname:"Maria", lname:"Karlsson", 170.3, 65);
+            //Person person = personHandler.CreatePerson(age: 35, fname: "Maria", lname: "Karlsson", 170.3, 65);
             //Console.WriteLine($"Before changing: {person.FName} {person.LName} {person.Age} years {person.Height} cm {person.Weight} kg");
 
-            //personHandler.SetAge(person, 55);
-            //personHandler.SetHeight(person,155);
+            //personHandler.SetAge(person, 55);               
+            //personHandler.SetHeight(person, 155);
             //personHandler.SetLName(person, "Smith");
-            //Console.WriteLine($"After changing:{person.FName } {person.LName} { person.Age} years {person.Height} cm {person.Weight} kg");
+            //Console.WriteLine($"After changing:{person.FName} {person.LName} {person.Age} years {person.Height} cm {person.Weight} kg");
 
 
             //PersonHandler personHandler2 = new PersonHandler();
@@ -146,20 +149,17 @@ namespace Ovn3
 
             //personHandler.SetAge(person2, 70);
             //personHandler.SetFName(person2, "Erik");
-            //personHandler.SetWeight(person2, 75);      
+            //personHandler.SetWeight(person2, 75);
             //Console.WriteLine($"After changing: {person2.FName} {person2.LName} {person2.Age} years {person2.Height} cm {person2.Weight} kg");
 
 
 
+            //****Uppgift 3.1.1 * ****Inkapsling
 
-
-            // **** Uppgift 3.1.1 *****   Inkapsling
-            //
-            // Person person=new Person();
+            // Person person = new Person();
             //try
             //{
-            //    //person.Age = -2;
-            //    PersonHandler.SetAge(person, 10);
+            //    person.Age = -2;                
             //}
             //catch (Exception ex)
             //{
@@ -168,8 +168,7 @@ namespace Ovn3
 
             //try
             //{
-            //person.FName = "A";
-
+            //    person.FName = "A";
             //}
             //catch (Exception ex)
             //{
@@ -178,8 +177,7 @@ namespace Ovn3
 
             //try
             //{
-            //person.LName = "Vessssssssleeeeeeeeeen";
-
+            //    person.LName = "Vessssssssleeeeeeeeeen";
             //}
             //catch (Exception ex)
             //{

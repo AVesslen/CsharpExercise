@@ -43,6 +43,11 @@ namespace Ovn3
             }
             set
             {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("The value can't be null");
+                }
+
                 if (value.Length >= 2 && value.Length <= 10)
                     fName = value;
                 else

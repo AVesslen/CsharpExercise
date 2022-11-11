@@ -30,6 +30,7 @@ namespace Ovn3
         {
             return $"Name: {Name} Age: {Age} Weight: {Weight}";
         }
+       
     }
 
     class Horse : Animal
@@ -39,7 +40,6 @@ namespace Ovn3
         {
             return "Horse sound: Neigh";
         }
-
         public override string Stats()
         {
             string baseProperties=base.Stats();
@@ -63,9 +63,11 @@ namespace Ovn3
         }
 
         public string Eat()
-        { return "Dog eats: meat"; }  // Fråga 3.4.16: Jag kommer inte åt den här metoden från Animals-listan                                           
-    }                                 // eftersom metoden inte finns i Animals-klassen. Dog ärver Animals, 
-                                      // men Animals har ingen koll på vad som sker i Dog. 
+        { 
+            return "Dog eats: meat"; 
+        }                                                                       
+    }                                 
+                                      
 
     class Hedgehog : Animal
     {
@@ -160,9 +162,7 @@ namespace Ovn3
     // Fråga 3.3.13: Om samtliga fåglar behöver ett nytt attribut lägger vi det i klassen Bird
     // Fråga 3.3.14: Om alla djur behöver det nya attributet lägger vi det i klassen Animal
 
-    // Fråga 3.4.9: De ärver inte av varandra
-    // Fråga 3.4.10: För att alla klasser ska kunna lagras tillsammans måste listan vara av typ Animal
-    // 
+   
 
     
 }
