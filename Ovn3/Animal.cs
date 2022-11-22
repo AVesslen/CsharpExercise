@@ -9,8 +9,7 @@ namespace Ovn3
 {
     internal interface IPerson
     {
-        string Talk();
-         
+        string Talk();         
     }
 
     abstract class Animal
@@ -31,8 +30,7 @@ namespace Ovn3
         public virtual string Stats()
         {
             return $"Name: {Name} Age: {Age} Weight: {Weight}";
-        }
-       
+        }       
     }
 
     class Horse : Animal
